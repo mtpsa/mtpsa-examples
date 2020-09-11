@@ -1,0 +1,20 @@
+table_add ingress.set_user_id_table set_user_id 1 => 1
+table_add ingress.set_user_id_table set_user_id 2 => 2
+table_add ingress.set_user_id_table set_user_id 3 => 3
+table_add ingress.set_user_id_table set_user_id 4 => 4
+
+switch_context 1
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.1/32 => 1
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.2/32 => 2
+
+switch_context 2
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.1/32 => 1
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.2/32 => 2
+
+switch_context 3
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.1/32 => 3
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.2/32 => 4
+
+switch_context 4
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.1/32 => 3
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.2/32 => 4

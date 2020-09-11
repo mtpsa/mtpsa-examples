@@ -1,0 +1,52 @@
+table_add ingress.set_user_id_table set_user_id 1 => 1
+table_add ingress.set_user_id_table set_user_id 2 => 2
+table_add ingress.set_user_id_table set_user_id 3 => 3
+table_add ingress.set_user_id_table set_user_id 4 => 4
+
+switch_context 1
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.1/32 => 1
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.2/32 => 2
+
+switch_context 2
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.1/32 => 1
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.1.2/32 => 2
+
+switch_context 3
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.1/32 => 3
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.2/32 => 4
+
+switch_context 4
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.1/32 => 3
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.2.2/32 => 4
+
+switch_context 5
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.3.1/32 => 5
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.3.2/32 => 6
+
+switch_context 6
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.3.1/32 => 5
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.3.2/32 => 6
+
+switch_context 7
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.4.1/32 => 7
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.4.2/32 => 8
+
+switch_context 8
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.4.1/32 => 7
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.4.2/32 => 8
+
+switch_context 9
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.5.1/32 => 9
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.5.2/32 => 10
+
+switch_context 10
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.5.1/32 => 9
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.5.2/32 => 10
+
+switch_context 11
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.6.1/32 => 11
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.6.2/32 => 12
+
+switch_context 12
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.6.1/32 => 11
+table_add ingress.ipv4_forward_table ipv4_forward 10.0.6.2/32 => 12
